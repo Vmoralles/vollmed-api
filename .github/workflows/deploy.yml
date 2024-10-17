@@ -33,7 +33,7 @@ jobs:
         USER: ubuntu
         HOST: 54.198.40.22
       run: |
-        echo "$EC2_KEY" > aluraChave.pem
+        echo "$PRIVATE_KEY" > aluraChave.pem
         chmod 600 aluraChave.pem
 
         docker save -o vollmed-api.tar vollmed-api_api
