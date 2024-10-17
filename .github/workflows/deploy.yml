@@ -33,7 +33,7 @@ jobs:
         USER: ubuntu
         HOST: 54.198.40.22
       run: |
-        echo "$PRIVATE_KEY" > deploy_key.pem
+        echo "$EC2_KEY" > deploy_key.pem
         chmod 600 deploy_key.pem
 
         docker save -o vollmed-api.tar vollmed-api_api
