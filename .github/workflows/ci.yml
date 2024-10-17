@@ -30,10 +30,10 @@ jobs:
       run: docker-compose up -d
 
     - name: Executa teste unitarios
-      run: mvn -B verify
+      run: mnv -B verify
 
     - name: gera relatorio jacoco
-      run: mvn jacoco:prepare-agent verify
+      run: mnv jacoco:prepare-agent verify
 
     - name: Analise estatica
       env:
