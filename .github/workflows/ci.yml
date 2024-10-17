@@ -1,5 +1,4 @@
 name: CI voll med
-
 on: 
   push:
     branches: ["main"]
@@ -33,3 +32,9 @@ jobs:
 
     - name: Executa teste unitarios
       run: mvn -B verify
+
+    - name: Analise estatica
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Vmoralles_vollmed-api
